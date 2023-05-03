@@ -24,7 +24,7 @@ from Heroku.calls.queues import clear, get, is_empty, put, task_done
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
     try:
-        member = await app.get_chat_member(chat_id, user_id)
+        member = await Client.get_chat_member(chat_id, user_id)
     except Exception:
         return []
     if member.can_post_messages:
@@ -57,9 +57,9 @@ async def pause(app: Client, message: Message):
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
         )
-    permission = "can_delete_messages"
+    permission = "can_post_messages"
     m = await adminsOnly(permission, message)
-    if m == 1:
+    if m == 0:
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
@@ -84,9 +84,9 @@ async def resume(app: Client, message: Message):
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
         )
-    permission = "can_delete_messages"
+    permission = "can_post_messages"
     m = await adminsOnly(permission, message)
-    if m == 1:
+    if m == 0:
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
@@ -112,9 +112,9 @@ async def stop(app: Client, message: Message):
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
         )
-    permission = "can_delete_messages"
+    permission = "can_post_messages"
     m = await adminsOnly(permission, message)
-    if m == 1:
+    if m == 0:
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
@@ -140,9 +140,9 @@ async def skip(app: Client, message: Message):
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
         )
-    permission = "can_delete_messages"
+    permission = "can_post_messages"
     m = await adminsOnly(permission, message)
-    if m == 1:
+    if m == 0:
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
@@ -178,9 +178,9 @@ async def stop_cmd(app: Client, message):
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
         )
-    permission = "can_delete_messages"
+    permission = "can_post_messages"
     m = await adminsOnly(permission, message)
-    if m == 1:
+    if m == 0:
         return
     chat_id = message.chat.id
     checking = message.from_user.mention
