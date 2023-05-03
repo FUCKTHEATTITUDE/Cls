@@ -48,9 +48,9 @@ async def others(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🗯️ ʜᴇʀᴏᴋᴜ", url=f"https://heroku.com"),
+                        "FUN CHATS", url=f"https://t.me/Teakadai_tamilchat"),
                     InlineKeyboardButton(
-                        "🌐 ɢɪᴛʜᴜʙ", url=f"https://github.com/Itz-Zaid")
+                        "clone", url=f"https://t.me/HowToCloneourbot")
                 ],
                 [
                     InlineKeyboardButton(
@@ -97,11 +97,7 @@ async def reinfo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("repoinfo"))
 async def repoinfo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""ᴀʙᴏᴜᴛ ᴛʜᴇ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : 
-
-ᴛʜɪs ʀᴇᴘᴏ ɪs ᴏɴʟʏ ᴍᴀᴅᴇ ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ ᴀ ᴘᴏᴡᴇʀғᴜʟ ᴍᴜsɪᴄ ʙᴏᴛ ᴏɴ ʜᴇʀᴏᴋᴜ ᴡɪᴛʜᴏᴜᴛ ғᴀᴄɪɴɢ ʜᴇʀᴏᴋᴜ ᴀᴄᴄᴏᴜɴᴛ ʙᴀɴɴɪɴɢ ᴘʀᴏʙᴇʟᴍ.
-
-🔗 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : https://github.com/ITZ-ZAID/Zaid-Vc-Player""",
+        f"""facing any issue in bot directly apporch in @teakadai_tamilchat and tag @admin give report about bot""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
