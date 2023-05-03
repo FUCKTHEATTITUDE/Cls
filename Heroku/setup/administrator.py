@@ -17,9 +17,7 @@ async def authorised(message):
 async def unauthorised(message: Message):
     chatID = message.chat.id
     checking = message.from_user.mention
-    text = (
-        f"**ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴅᴏ ᴛʜɪs !!**"
-        + f"\n❌ Delete Message Chats"
+    text = (f"""❤️"""
     )
     try:
         await message.reply_text(text)
@@ -30,11 +28,8 @@ async def unauthorised(message: Message):
 async def adminsOnly(permission, message):
     chatID = message.chat.id
     if not message.from_user:
-        if message.sender_chat:
-            return await authorised(message)
         return await unauthorised(message)
     userID = message.from_user.id
     permissions = await member_permissions(chatID, userID)
     if userID not in SUDO_USERS and permission not in permissions:
         return await unauthorised(message)
-    return await authorised(message)
